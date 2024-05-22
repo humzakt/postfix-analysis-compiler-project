@@ -1,0 +1,6 @@
+flex postfix.l
+gcc -o postfix_analyzer lex.yy.c syntax_checker.c -L$(brew --prefix flex)/lib -lfl
+./postfix_analyzer "123 456 + 789 * 10 -"
+./postfix_analyzer "123 456 + 789 * 10 --"
+./postfix_analyzer "123 456 + 789 * 10 - -"
+./postfix_analyzer "123 456 + 789 * 10"
